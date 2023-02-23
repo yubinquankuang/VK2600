@@ -9186,7 +9186,7 @@ game_menus = [
             (call_script, "script_diplomacy_start_war_between_kingdoms", "$players_kingdom", "$g_encountered_party_faction", logent_player_faction_declares_war),
             (call_script, "script_change_player_relation_with_center", "$g_encountered_party", -4),
             (party_get_slot, ":town_lord", "$g_encountered_party", slot_town_lord),
-            (call_script, "script_change_player_relation_with_troop", ":town_lord", -30),
+            (call_script, "script_change_player_relation_with_troop", ":town_lord", -15), #m_change
             
             #player is vassal
             (try_begin),
@@ -9224,10 +9224,10 @@ game_menus = [
             
             #no kingdom or at war
           (else_try),
-            (call_script, "script_make_kingdom_hostile_to_player", "$g_encountered_party_faction", -40),
+            (call_script, "script_make_kingdom_hostile_to_player", "$g_encountered_party_faction", -20), #m_change -40 to -20
             (call_script, "script_change_player_relation_with_center", "$g_encountered_party", -2),
             (party_get_slot, ":town_lord", "$g_encountered_party", slot_town_lord),
-            (call_script, "script_change_player_relation_with_troop", ":town_lord", -30),
+            (call_script, "script_change_player_relation_with_troop", ":town_lord", -15),# m_change -15 to -30
           (try_end),
           #MOTO end add consequences as vassal
           (call_script, "script_update_all_notes"),
@@ -22983,7 +22983,7 @@ game_menus = [
         (set_fixed_point_multiplier, 100),
         (try_for_range, ":center", centers_begin, centers_end),#reduce relacion con cada centro chief
           (store_distance_to_party_from_party, ":cur_distance", "p_main_party", ":center"),
-          (lt,":cur_distance", 40), #2500 way too far
+          (lt,":cur_distance", 90), #2500 way too far
           #(store_random_in_range, ":penalty", -7, -1),
           (party_get_slot, ":faith", ":center", slot_center_faithratio),
           (val_div, ":faith", -13),		#-7 ... 0

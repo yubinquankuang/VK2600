@@ -782,7 +782,7 @@ edited_native_scripts = [
         (party_set_slot,":castle_no", slot_center_is_besieged_by, -1),
       (try_end),
       
-      # Monasteries
+      # Monasteries set map party scron
       (try_for_range, ":monastery", "p_monasterio1", "p_yourlair"),
         (store_mod, ":mod", ":monastery", 2),
         (try_begin),
@@ -1715,6 +1715,14 @@ edited_native_scripts = [
           (store_random_in_range, ":rand", 5, 40),	# ratio is christian/pagan
           (party_set_slot, ":center_no", slot_center_faithratio, ":rand"),
         (try_end),
+      (try_end),
+      #set shenmiao and xiudaoyuan
+      (try_for_range,":monastery","p_monasterio1","p_yourlair"),
+        (party_set_slot,":monastery",slot_center_religion, 1),#can recruit
+      (try_end),
+      #holy pagan sites berserkers or pagan holy refuges
+      (try_for_range,":hof","p_paganholysites1","p_reserved_1"),
+        (party_set_slot,":hof",slot_center_religion, 2),
       (try_end),
       ## setup Friese, Denmark
       (store_random_in_range, ":rand", 50, 60), #valores de fe
@@ -25485,7 +25493,7 @@ edited_native_scripts = [
           (store_div, ":relation_with_liege_change", ":relation_with_troop", 8), #changed from 16
           (val_sub, ":relation_with_liege_change", 2),
           
-          (val_clamp, ":relation_with_liege_change", -5, 3),
+          (val_clamp, ":relation_with_liege_change", -2, 3), # m_change-5 to -2
           
           (try_begin),
             #upstanding and goodnatured lords will not lose relation unless they actively dislike the other lord
@@ -38174,7 +38182,7 @@ edited_native_scripts = [
         
         (neg|troop_slot_ge, ":troop_no", slot_troop_prisoner_of_party, 0),
         
-        (store_random_in_range, ":town_no", towns_begin, "p_town_2"),
+        (store_random_in_range, ":town_no", "p_town_2", "p_town_3"),
         (try_begin),
           (neg|troop_slot_eq, ":troop_no", slot_troop_home, ":town_no"),
           (neg|troop_slot_eq, ":troop_no", slot_troop_first_encountered, ":town_no"),

@@ -137,6 +137,7 @@ def_attrib2 = str_18 | agi_8 | int_12 | cha_12 #+3 level med
 def_attrib3 = str_20 | agi_8 | int_12 | cha_12 #+5 level max
 def_attrib_multiplayer = str_16 | agi_8 | int_12 | cha_12
 def_attrib_troll = str_30 | agi_30 | int_6 | cha_6 #special
+def_attrib4 = str_30 | agi_18 | int_12 | cha_12 # lord exile solider
 
 knows_merchant_npc = knows_riding_2|knows_trade_9|knows_inventory_management_10|knows_persuasion_4|knows_power_strike_2|knows_shield_2|knows_weapon_master_3|knows_ironflesh_3|knows_athletics_4|knows_leadership_1|knows_wound_treatment_2|knows_first_aid_2|knows_surgery_2|knows_power_throw_2|knows_spotting_3|knows_pathfinding_4
 knows_warrior_npc = knows_weapon_master_2|knows_ironflesh_2|knows_athletics_5|knows_riding_6|knows_power_strike_1|knows_shield_2|knows_inventory_management_5|knows_power_throw_1 #cambiado chief
@@ -1145,7 +1146,7 @@ troops = [
    def_attrib2|level(25),wp(210),knows_warrior_normal,vaegir_face_younger_1, vaegir_face_older_2],
     ["frisian_heavy_cav","Frisian Heavy Horseman (Riddere)","Frisian Heavy Horsemen (Riddere)",tf_mounted|tf_guarantee_polearm|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_horse|tf_guarantee_ranged|tf_guarantee_shield,no_scene,reserved,fac_culture_norse,
    []+long_warspears+javelin_only+common_horse+elite_shoes+saxons_elite_old_helmets+frisianshort_mail+frisianlong_mail+frankish_roundshields+common_sword,
-   def_attrib3|level(29),wpex(295,150,310,40,0,285)|wp_firearm(100),knows_warrior_veteran,man_face_younger_1, man_face_older_2],
+   def_attrib4|level(29),wpex(295,150,310,40,0,285)|wp_firearm(100),knows_warrior_veteran,man_face_younger_1, man_face_older_2],
  
 
 #########BRITONS SP only
@@ -1863,67 +1864,67 @@ itm_longseax1],
   ["kingdom_heroes_including_player_begin",  "kingdom_heroes_including_player_begin",  "kingdom_heroes_including_player_begin",  tf_hero, 0,reserved,  fac_kingdom_1,[],          lord_attrib,wp(220),knows_lord_1, 0x000000000010918a01f248377289467d],
 #40 points for skills #45 points for attributes
   ["npc1","Caio","Caio",tf_hero|tf_unmoveable_in_party_window, 0, reserved, fac_commoners,[(itm_hoodtunic_06, imod_crude),(itm_carbatinae_vc5,imod_tattered),itm_knife4, (itm_darts,imod_bent)],
-   str_14 | agi_16 | int_8 | cha_7|level(5),wpex(99,72,91,91,72,101)|wp_firearm(91), #caio acabado
+   str_24 | agi_26 | int_8 | cha_7|level(5),wpex(99,72,91,91,72,101)|wp_firearm(91), #caio acabado
    knows_ironflesh_4|knows_power_strike_3|knows_power_throw_6|knows_power_draw_2|knows_maintenance_4|knows_weapon_master_3|knows_athletics_6|knows_riding_1|knows_looting_1|knows_tracking_4|knows_pathfinding_8|knows_spotting_8|knows_inventory_management_3|knows_first_aid_1|knows_engineer_3|knows_persuasion_3|knows_leadership_2|knows_trade_3|knows_shield_1,
    0x000000003f106510329d852b9c56ab1a00000000001e3b120000000000000000], #chief acabado 
   ["npc2","Egil","Egil", tf_hero|tf_unmoveable_in_party_window, 0,reserved, fac_commoners,[itm_btunic_14,itm_carbatinae_vc2v,(itm_axe_6, imod_chipped),(itm_light_spear4, imod_bent)],
-    str_17 | agi_12 | int_8 | cha_14|level(11),wpex(98,91,110,91,91,91)|wp_firearm(91),
+    str_27 | agi_22 | int_8 | cha_14|level(11),wpex(98,91,110,91,91,91)|wp_firearm(91),
    knows_sea_king_2|knows_navigation_2|knows_ironflesh_8|knows_power_strike_8|knows_power_throw_8|knows_power_draw_2|knows_maintenance_3|knows_weapon_master_6|knows_athletics_6|knows_riding_3|knows_trainer_3|knows_tactics_4|knows_inventory_management_1|knows_first_aid_1|knows_persuasion_6|knows_leadership_7|knows_trade_2|knows_shield_3,
    0x00000005800866d05924ede72da938d400000000001eb4f20000000000000000], #chief acabado
   ["npc3","Brunhild","Brunhild",tf_female|tf_hero|tf_unmoveable_in_party_window, 0, reserved, fac_commoners,[itm_woman_norse3,itm_veil_b,itm_knife2],
-    str_9 | agi_10 | int_14 | cha_12|level(5),wpex(91,72,91,80,72,91)|wp_firearm(100),
+    str_19 | agi_20 | int_14 | cha_12|level(5),wpex(91,72,91,80,72,91)|wp_firearm(100),
    knows_ironflesh_4|knows_power_strike_3|knows_power_throw_4|knows_maintenance_7|knows_weapon_master_1|knows_athletics_5|knows_looting_5|knows_inventory_management_6|knows_wound_treatment_2|knows_first_aid_7|knows_persuasion_6|knows_leadership_1|knows_trade_6|knows_shield_1,
    0x0000000038000011270e2a9db5b2c46300000000001ec7950000000000000000], #chief mainstory, lo conoce en la playa donde va a coger el barco #moto
   ["npc4","Donnchadh","Donnchadh",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_picts_tunic_15,(itm_just_man_boots_light, imod_tattered), (itm_light_spear1,imod_bent),itm_knife5],
-    str_13 | agi_13 | int_14 | cha_10|level(11),wpex(110,72,91,91,72,98)|wp_firearm(91),
+    str_23 | agi_23 | int_14 | cha_10|level(11),wpex(110,72,91,91,72,98)|wp_firearm(91),
    knows_sea_king_1|knows_navigation_2|knows_ironflesh_6|knows_power_strike_3|knows_power_throw_6|knows_weapon_master_6|knows_athletics_5|knows_looting_6|knows_tracking_7|knows_tactics_5|knows_pathfinding_6|knows_spotting_6|knows_inventory_management_6|knows_first_aid_1|knows_persuasion_3|knows_leadership_5|knows_trade_5|knows_shield_2,
    0x000000002200479024e48e47ac6a4972000000000006281b0000000000000000], #chief acabado
   ["npc5","Morgant","Morgant",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[(itm_briton_tunic20, imod_crude),(itm_carbatinae_vc4, imod_ragged), itm_fustibalus2,itm_sling_lead,itm_club_hard],
-    str_15 | agi_18 | int_9 | cha_8|level(13),wpex(91,72,91,102,72,103)|wp_firearm(91),
+    str_25 | agi_28 | int_9 | cha_8|level(13),wpex(91,72,91,102,72,103)|wp_firearm(91),
    knows_navigation_2|knows_ironflesh_7|knows_power_strike_5|knows_power_throw_5|knows_power_draw_3|knows_maintenance_4|knows_weapon_master_4|knows_athletics_5|knows_riding_8|knows_looting_9|knows_tactics_2|knows_pathfinding_2|knows_inventory_management_7|knows_first_aid_1|knows_engineer_1|knows_persuasion_4|knows_leadership_2|knows_trade_6|knows_shield_2,
    0x000000001a04218816a992a9ac95a4d400000000001ea95c0000000000000000], #chief acabado
   ["npc6","Bodo","Bodo",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_hoodtunic_02,itm_carbatinae_1,itm_javelin, itm_long_light_spear2],
-    str_14 | agi_11 | int_10 | cha_14|level(9),wpex(111,91,91,91,91,91)|wp_firearm(91),
+    str_24 | agi_21 | int_10 | cha_24|level(9),wpex(111,91,91,91,91,91)|wp_firearm(91),
    knows_ironflesh_7|knows_power_strike_7|knows_power_throw_7|knows_maintenance_3|knows_weapon_master_5|knows_athletics_5|knows_riding_4|knows_trainer_5|knows_tactics_5|knows_inventory_management_4|knows_first_aid_2|knows_persuasion_7|knows_leadership_7|knows_trade_1|knows_shield_3,
   0x00000004b40c628d45188ce8ae8e592300000000001d9c9b0000000000000000], #chief acabado
   ["npc7","Dwywei","Dwywei",tf_female|tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_ptunic_6woman,(itm_womenshoes_3, imod_ragged), itm_hunting_crossbow, itm_bolts, itm_knife],
-    str_10 | agi_12 | int_12 | cha_12|level(7),wpex(91,72,91,72,95,72)|wp_firearm(91), #chief acabado
+    str_20 | agi_22 | int_12 | cha_12|level(7),wpex(91,72,91,72,95,72)|wp_firearm(91), #chief acabado
    knows_ironflesh_3|knows_power_strike_4|knows_power_throw_5|knows_power_draw_5|knows_maintenance_2|knows_weapon_master_6|knows_athletics_6|knows_riding_5|knows_looting_6|knows_tracking_3|knows_pathfinding_2|knows_spotting_2|knows_inventory_management_5|knows_wound_treatment_4|knows_surgery_2|knows_first_aid_5|knows_persuasion_7|knows_leadership_5|knows_trade_3|knows_shield_2,
    0x000000002d00600212ae47566c71d88b00000000001e3dec0000000000000000], #moto
   ["npc8","Reginhard","Reginhard",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[(itm_phrygian15, imod_ragged), (itm_btunic_5woman,imod_tattered), (itm_carbatinae_vc1s, imod_ragged), (itm_long_light_spear2, imod_cracked),itm_seax_4, (itm_javelin, imod_bent)],
-    str_11 | agi_15 | int_10 | cha_10|level(12),wpex(91,73,125,91,72,91)|wp_firearm(91), #lo conoce en la taberna en la quest principal
+    str_21 | agi_25 | int_10 | cha_10|level(12),wpex(91,73,125,91,72,91)|wp_firearm(91), #lo conoce en la taberna en la quest principal
    knows_navigation_2|knows_ironflesh_5|knows_power_strike_5|knows_power_throw_5|knows_power_draw_3|knows_weapon_master_6|knows_athletics_6|knows_riding_2|knows_looting_7|knows_tracking_5|knows_tactics_2|knows_pathfinding_7|knows_spotting_3|knows_inventory_management_5|knows_first_aid_3|knows_persuasion_3|knows_leadership_3|knows_trade_5|knows_shield_2,
    0x0000000d6e040b037ae68dd5b4f5532c00000000001e34da0000000000000000], #chief acabado
   ["npc9","Clovis","Clovis",tf_male|tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_bl_tunic08,(itm_carbatinae_vc5, imod_tattered), (itm_heavy_spear2, imod_bent),(itm_throwing_spears2, imod_bent),(itm_phrygian10, imod_ragged)],
-    str_15 | agi_12 | int_13 | cha_9|level(13),wpex(101,101,101,92,91,100)|wp_firearm(91),
+    str_25 | agi_22 | int_13 | cha_9|level(13),wpex(101,101,101,92,91,100)|wp_firearm(91),
    knows_sea_king_1|knows_navigation_1|knows_ironflesh_7|knows_power_strike_7|knows_power_throw_7|knows_power_draw_2|knows_maintenance_6|knows_weapon_master_6|knows_athletics_4|knows_riding_4|knows_trainer_5|knows_tactics_6|knows_inventory_management_6|knows_first_aid_3|knows_engineer_3|knows_persuasion_4|knows_leadership_5|knows_trade_3|knows_shield_3,
    0x0000000a7f0c55d4689a4da2b28ac72700000000001d26ed0000000000000000], #chief acabado
   ["npc10","Ceawlin","Ceawlin",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[(itm_bl_tunic12, imod_crude),(itm_carbatinae_vc1s, imod_tattered), itm_long_light_spear1, itm_seax_1,(itm_throwing_spears, imod_bent)],
-    str_20 | agi_12 | int_6 | cha_11|level(11),wpex(106,91,103,91,91,91)|wp_firearm(91),
+    str_30 | agi_22 | int_6 | cha_11|level(11),wpex(106,91,103,91,91,91)|wp_firearm(91),
    knows_ironflesh_9|knows_power_strike_9|knows_power_throw_9|knows_maintenance_3|knows_weapon_master_6|knows_athletics_8|knows_riding_2|knows_looting_6|knows_trainer_1|knows_tactics_1|knows_inventory_management_4|knows_first_aid_3|knows_persuasion_1|knows_leadership_3|knows_trade_2|knows_shield_3,
    0x00000008cb0826cc195ba5c8e1d2d33200000000001ec91c0000000000000000], #chief acabado
   ["npc11","Solveig","Solveig",tf_female|tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_btunic_11, (itm_carbatinae_2v, imod_tattered), itm_war_spear2,(itm_throwing_spears, imod_cracked),(itm_axe_7, imod_chipped)], #Solveig, ayuda a player en emboscada
-    str_12 | agi_8 | int_12 | cha_18|level(10),wpex(110,85,100,40,0,100)|wp_firearm(50),
+    str_22 | agi_18 | int_12 | cha_18|level(10),wpex(110,85,100,40,0,100)|wp_firearm(50),
    knows_sea_king_1|knows_navigation_1|knows_ironflesh_6|knows_power_strike_4|knows_power_throw_4|knows_power_draw_6|knows_maintenance_4|knows_weapon_master_4|knows_athletics_6|knows_riding_4|knows_trainer_1|knows_spotting_2|knows_inventory_management_4|knows_wound_treatment_2|knows_first_aid_4|knows_persuasion_9|knows_leadership_9|knows_trade_3|knows_shield_2,
    0x000000000010100828de9214614e4a5200000000001de0a40000000000000000], #moto
   ["npc12","Asbjorn","Asbjorn",tf_hero|tf_guarantee_armor|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_robe6, itm_staff, itm_sling3, itm_sling_rock1],
-    str_14 | agi_12 | int_14 | cha_7|level(5),wpex(91,72,91,80,72,82)|wp_firearm(91),
+    str_24 | agi_22 | int_14 | cha_7|level(5),wpex(91,72,91,80,72,82)|wp_firearm(91),
    knows_ironflesh_6|knows_power_strike_1|knows_power_throw_5|knows_power_draw_2|knows_weapon_master_2|knows_athletics_4|knows_riding_4|knows_tactics_2|knows_inventory_management_7|knows_wound_treatment_7|knows_surgery_7|knows_first_aid_7|knows_engineer_1|knows_persuasion_7|knows_leadership_3|knows_trade_4|knows_shield_1,
    0x00000008cb001508452311ba9d75d91900000000001d16650000000000000000], #chief acabado
   ["npc13","Helgi","Helgi",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_btunic_12,(itm_carbatinae_10, imod_tattered), itm_light_spear2,(itm_throwing_spears, imod_bent),(itm_hatchet, imod_rusty),itm_phrygian16],
-    str_15 | agi_12 | int_12 | cha_12|level(13),wpex(117,72,92,72,72,72)|wp_firearm(91),
+    str_25 | agi_22 | int_12 | cha_12|level(13),wpex(117,72,92,72,72,72)|wp_firearm(91),
    knows_sea_king_4|knows_navigation_6|knows_ironflesh_7|knows_power_strike_7|knows_power_throw_7|knows_maintenance_4|knows_weapon_master_6|knows_athletics_4|knows_looting_2|knows_pathfinding_2|knows_inventory_management_7|knows_wound_treatment_2|knows_surgery_2|knows_first_aid_3|knows_persuasion_6|knows_trainer_3|knows_leadership_6|knows_trade_7|knows_shield_2,
    0x00000008c00c3214189c2d8002ce330c00000000001e2b8b0000000000000000], #chief acabado
   ["npc14","Ailchu","Ailchu",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_gael_tunic_02,(itm_just_man_boots_light, imod_ragged), (itm_pictish_hatchet11, imod_chipped),(itm_darts, imod_bent)],
-    str_8 | agi_19 | int_10 | cha_8|level(11),wpex(95,72,114,87,72,91)|wp_firearm(91),
+    str_18 | agi_29 | int_10 | cha_8|level(11),wpex(95,72,114,87,72,91)|wp_firearm(91),
    knows_ironflesh_6|knows_power_strike_4|knows_power_throw_4|knows_power_draw_4|knows_maintenance_5|knows_weapon_master_9|knows_athletics_9|knows_riding_9|knows_looting_9|knows_inventory_management_4|knows_first_aid_4|knows_engineer_1|knows_persuasion_2|knows_leadership_2|knows_trade_4|knows_shield_2,
    0x000000078010120f26c432b56d6948db00000000001da59a0000000000000000], #chief acabado
   ["npc15","Agathinos","Agathinos",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_hoodtunic_04,(itm_carbatinae_vc3, imod_tattered), itm_knife3,itm_sling2, itm_sling_rock1],
-    str_9 | agi_9 | int_18 | cha_8|level(6),wpex(91,72,103,78,72,91)|wp_firearm(91),
+    str_19 | agi_19 | int_18 | cha_8|level(6),wpex(91,72,103,78,72,91)|wp_firearm(91),
    knows_navigation_4|knows_ironflesh_5|knows_power_strike_4|knows_power_throw_3|knows_maintenance_9|knows_weapon_master_4|knows_athletics_5|knows_riding_3|knows_looting_1|knows_tactics_9|knows_inventory_management_5|knows_first_aid_1|knows_engineer_9|knows_persuasion_4|knows_leadership_4|knows_trade_4|knows_shield_1,
    0x0000000f3f0470807894959ae227335a00000000001d29240000000000000000], #chief acabado
   ["npc16","Beda","Beda",tf_hero|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_robe, itm_knife,itm_staff],
-    str_9 | agi_9 | int_14 | cha_13|level(6),wpex(91,72,91,82,77,78)|wp_firearm(91),
+    str_19 | agi_19 | int_14 | cha_13|level(6),wpex(91,72,91,82,77,78)|wp_firearm(91),
    knows_ironflesh_5|knows_power_throw_4|knows_weapon_master_1|knows_athletics_4|knows_riding_2|knows_looting_4|knows_tactics_5|knows_inventory_management_5|knows_wound_treatment_7|knows_surgery_5|knows_first_aid_7|knows_engineer_4|knows_persuasion_7|knows_leadership_5|knows_trade_6|knows_shield_1,
    0x0000000ea60c6204431548ea53d2325600000000001da98a0000000000000000], #chief acabado 
 

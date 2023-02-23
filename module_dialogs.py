@@ -12711,7 +12711,7 @@ dialogs = [
       (call_script, "script_change_player_honor", 1), #chief cambiado
       #    (troop_get_slot, ":cur_rank", "$g_talk_troop", slot_troop_kingdom_rank),
       #    (val_mul, ":cur_rank", 1),
-      (call_script, "script_change_player_relation_with_faction", "$g_talk_troop_faction", 6)]], #chief cambiado
+      (call_script, "script_change_player_relation_with_faction", "$g_talk_troop_faction", 26)]], #chief cambiado
   
   [anyone,"freed_lord_answer_2", [],
     "Thank you, good {reg59?lady:sire}. I never forget someone who's done me a good turn.", "close_window",
@@ -12764,9 +12764,10 @@ dialogs = [
   
   [anyone|plyr,"defeat_lord_answer", [],
     "You have fought well. You are free to go.", "defeat_lord_answer_2",
-    [(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 5),
+    [(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 15), #m_change 5 to 15
       (call_script, "script_change_player_honor", 3),
-      (call_script, "script_add_log_entry", logent_lord_defeated_but_let_go_by_player, "trp_player",  -1, "$g_talk_troop", "$g_talk_troop_faction")]],
+      (call_script, "script_add_log_entry", logent_lord_defeated_but_let_go_by_player, "trp_player",  -1, "$g_talk_troop", "$g_talk_troop_faction"),
+      (call_script, "script_change_player_relation_with_faction", "$g_talk_troop_faction", 26)]], # m_change add this line
   
   [anyone,"defeat_lord_answer_2", [],
     "{!}{s43}", "close_window", [
@@ -14778,7 +14779,7 @@ dialogs = [
     ],
     "[You watch as Morrigan turns her back and walks away from you. She turns her face for an instant, and you think you see tears in her eyes. Then she leaves.]", "close_window", [
       (quest_set_slot,"qst_blank_quest_26",slot_quest_current_state, 11), #
-      (remove_member_from_party, "trp_morrigan_npc", "p_main_party"),
+      #(remove_member_from_party, "trp_morrigan_npc", "p_main_party"),
       (jump_to_menu, "mnu_bresail_fort_visit"),
       (finish_mission,0),
   ]],
@@ -52160,8 +52161,8 @@ dialogs = [
       (val_add, ":persuasionl", ":charismal"),
       (val_add, ":persuasion", ":charisma"),
       (store_sub, ":diff", ":persuasion", ":persuasionl"),
-      (val_max, ":diff" ,1),
-      (store_random_in_range, ":rand", 0, 100),
+      (val_max, ":diff" ,5),
+      (store_random_in_range, ":rand", 13, 100),  #m_change 0 - 13
       (try_begin),
         (le, ":diff", 1),
         (try_begin),
@@ -52207,8 +52208,8 @@ dialogs = [
       (val_add, ":persuasionl", ":charismal"),
       (val_add, ":persuasion", ":charisma"),
       (store_sub, ":diff", ":persuasion", ":persuasionl"),
-      (val_max, ":diff" ,1),
-      (store_random_in_range, ":rand", 0, 100),
+      (val_max, ":diff" ,5),
+      (store_random_in_range, ":rand", 0, 100),  #m_change add change to convert
       (try_begin),
         (le, ":diff", 1),
         (try_begin),
@@ -52254,23 +52255,23 @@ dialogs = [
       (troop_set_slot, "$g_talk_troop", slot_troop_occupation, slto_kingdom_hero),
       (try_begin),
         (troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_cunning),
-        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 5),
+        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 15),
       (else_try),
         (this_or_next|troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_martial),
         (this_or_next|troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_roguish),
         (troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_selfrighteous),
-        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 7),
+        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 17),
       (else_try),
         (this_or_next|troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_upstanding),
         (this_or_next|troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_benefactor),
         (this_or_next|troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_custodian),
         (troop_slot_eq, "$g_talk_troop", slot_lord_reputation_type, lrep_goodnatured),
-        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 10),
+        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 20),
       (else_try),
-        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 3),
+        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 13),
       (try_end),
       (call_script, "script_change_player_honor", 5),
-      (call_script, "script_change_player_relation_with_faction", "$g_talk_troop_faction", 5),
+      (call_script, "script_change_player_relation_with_faction", "$g_talk_troop_faction", 25),#m_change
       (troop_get_slot, ":religion","trp_player", slot_troop_religion),
       (troop_set_slot, "$g_talk_troop", slot_troop_religion, ":religion"),	#same as player
       (troop_get_slot, ":controversy", "$g_talk_troop", slot_troop_controversy),
